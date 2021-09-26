@@ -1,0 +1,15 @@
+extends base
+include mixins/question
+
+block content 
+    h2 Questions 
+
+    each question in questions 
+        +question(question)
+    else 
+        li There is no question.
+
+    form(method="POST")
+        input(placeholder = "name", name="name", type="text", required)
+        input(placeholder = "Your Question", name="question", type="text", required)
+        input(type="submit", value="Submit")
